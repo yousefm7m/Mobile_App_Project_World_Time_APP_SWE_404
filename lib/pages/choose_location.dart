@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:secondproject/services/world-time.dart';
+import 'package:secondproject/services/db_service.dart';
 import 'dart:ui';
 
 class ChooseLocation extends StatefulWidget {
@@ -48,6 +49,9 @@ class _ChooseLocationState extends State<ChooseLocation> {
 
     WorldTime instance = locations[index];
     await instance.getTime();
+    
+    // Save to MongoDB database
+    await MongoDatabase.saveHistory(instance.location, instance.time, instance.date);
     
     Navigator.pop(context); 
 

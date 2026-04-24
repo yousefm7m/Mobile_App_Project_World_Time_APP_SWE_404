@@ -195,6 +195,37 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                                 ],
                               ),
                             ),
+                            const SizedBox(height: 16.0),
+                            ElevatedButton(
+                              onPressed: () {
+                                Navigator.pushNamed(context, '/history');
+                              },
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.transparent,
+                                foregroundColor: Colors.white,
+                                elevation: 0,
+                                side: BorderSide(color: Colors.white.withOpacity(0.3), width: 1.5),
+                                padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 18),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(30),
+                                ),
+                              ),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: const [
+                                  Icon(Icons.history, size: 26),
+                                  SizedBox(width: 12),
+                                  Text(
+                                    'Search History',
+                                    style: TextStyle(
+                                      fontSize: 18.0,
+                                      fontWeight: FontWeight.bold,
+                                      letterSpacing: 1.0,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
                           ],
                         ),
                       ),
